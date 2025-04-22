@@ -1,0 +1,315 @@
+# Simple version of the Fur Elise
+use_bpm 160
+use_synth :square
+ampval = [0.5, 0.8,1,1.5,2]
+a = 0
+live_loop :choir do
+  32.times do
+    sample :ambi_choir,beat_stretch: 7, amp: ampval[a]
+    sleep 1
+    a = a + 1
+  end
+  stop
+end
+sleep 8
+live_loop :beat do
+  
+  # First part of the melody
+  #total sleep= 2
+  sleep 8
+  play :e3
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :e3
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :e3
+  sleep 0.5
+  play :b3
+  sleep 0.5
+  print("one")
+  
+  play :d3
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :a2
+  sleep 1.5
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :a4
+  sleep 0.5
+  play :b4
+  sleep 1.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 2
+  print("two")
+  #repeat
+  play :e3
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :e3
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :e3
+  sleep 0.5
+  play :b3
+  sleep 0.5
+  print("three")
+  # Second part of the melody
+  #total sleep= 2
+  play :d3
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :a2
+  sleep 1.5
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :a4
+  sleep 0.5
+  play :b4
+  sleep 1.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  stop
+end
+sleep 18
+live_loop :choir2 do
+  8.times do
+    sample :ambi_choir,beat_stretch: 4, amp: 2
+    sleep 1
+  end
+  stop
+end
+
+sleep 12
+sample "C:/Users/sebastian_camacho/Documents/Audacity/_newMain Theme - Super Smash Bros Brawl.wav"
+
+sleep 8
+
+#custom song 2
+use_bpm 196
+use_synth :piano
+notes = [:c6,:b5,:bb5,:a5,:b5,:a5,:ab5,:g5,:a5,:g5,:fs5,:f5,:fs5,:f5,:e5,:eb5,:e5,:eb5,:d5,:cs5,:d5,:c5,:cs5,:bs4,:c5,:b4,:bb4,:a4,:b4,:a4,:ab4,:g4]
+i = 0
+victory = "C:/Users/sebastian_camacho/Downloads/s.pVictory Wild Pokémon (Pokémon Omega Ruby  Alpha Sapphire OST).wav"
+live_loop :beat do
+  56.times do
+    sample :drum_bass_soft
+    sleep 1
+  end
+  stop
+end
+
+sleep 8
+32.times do
+  play notes[i]
+  sleep 0.25
+  i = i + 1
+end
+define :repeat1 do
+  play :f4
+  play :b4
+  play :b2
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :d5
+  play :b4
+  play :f2
+  play :b2
+  sleep 0.5
+  play :f2
+  play :b2
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  play :d3
+  sleep 0.5
+end
+define :repeat2 do |a,b,c,d,e,f,g,h,i|
+  sleep 0
+  play :c5, amp: a
+  play :c4, amp: b
+  sleep 0.5
+  play :d4, amp: c
+  sleep 0.5
+  play :e4, amp: d
+  sleep 0.5
+  play :d5, amp: e
+  play :f4, amp: f
+  sleep 1
+  play :g4, amp: g
+  sleep 0.5
+  play :e4, amp: h
+  play :g5, amp: i
+  sleep 1
+end
+#1
+repeat2 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9
+#2
+play :f5, amp: 1
+play :f4
+sleep 0.5
+play :e5
+play :e4
+sleep 0.5
+play :d5
+play :f4
+sleep 0.5
+play :c5
+play :g4
+sleep 0.5
+play :f5
+sleep 0.5
+play :e5
+play :e4
+sleep 0.5
+play :d5
+play :c4
+sleep 0.5
+play :c5
+play :e4
+sleep 0.5
+#3
+#base w notes
+repeat1
+#4
+play :f5
+play :d5
+play :b4
+sleep 1.5
+play :a5
+play :f5
+sleep 1.5
+play :g5
+play :e5
+sleep 0.5
+play :e5
+sleep 0.5
+#5
+repeat2 1,1,1,1,1,1,1,1,1
+#6
+play :f5
+play :c4
+sleep 0.5
+play :e5
+play :d4
+sleep 0.5
+play :d5
+play :e4
+sleep 0.5
+play :f5
+play :f4
+sleep 0.5
+play :f5
+#7
+sleep 0.5
+play :e5
+play :g4
+sleep 0.5
+play :a4
+play :d5
+sleep 0.5
+play :c5
+play :e4
+sleep 0.5
+#2nd base part(3)7
+repeat1
+#8
+play :f5
+play :d5
+play :b4
+play :g4
+sleep 0.5
+play :d3
+sleep 0.5
+play :b2
+sleep 0.5
+play :b3
+play :d3
+sleep 0.5
+play :f5
+play :d4
+play :b3
+sleep 0.5
+play :a5
+play :d4
+play :b3
+sleep 0.5
+play :g5
+play :b2
+sleep 0.5
+play :f5
+play :d3
+sleep 0.5
+#9
+play :e5
+play :c5
+play :g2
+sleep 0.5
+play :c3
+sleep 0.5
+play :g2
+sleep 0.5
+play :g4
+play :c3
+sleep 0.5
+play :g2
+sleep 0.5
+play :c3
+sleep 0.5
+play :c5
+play :e4
+play :g2
+sleep 0.5
+play :c3
+sleep 0.5
+#10
+play :g5
+play :e5
+play :g2
+sleep 0.5
+play :c3
+sleep 0.5
+play :g2
+sleep 0.5
+play :d5
+play :c3
+sample :ambi_dark_woosh, amp: 2
+sleep 0.5
+play :g2
+sleep 0.5
+play :c3
+sleep 0.5
+play :c5
+play :g2
+sleep 0.5
+play :c3
+sleep 0.2
+sample victory, amp: 0.5
