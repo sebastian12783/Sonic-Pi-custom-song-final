@@ -106,7 +106,7 @@ end
 sleep 12
 sample "C:/Users/sebastian_camacho/Documents/Audacity/_newMain Theme - Super Smash Bros Brawl.wav"
 
-sleep 8
+sleep 9
 
 #custom song 2
 use_bpm 196
